@@ -1,0 +1,70 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<div style="float:left">
+<form action="areaddata" METHOD="post">
+    {% csrf_token %}
+<table align="center" border="2" class="table">
+<tr>
+    <td>Student_Semester:</td>
+    <td><input type="text" name="txtsemester"></td>
+</tr>
+<tr>
+    <td>Student_Course_id:</td>
+    <td>
+        <select name="ddlcourse">
+            {% for i in Course_Data %}
+                <option>{{ i.Course_Name }}</option>
+            {% endfor %}
+        </select>
+    </td>
+</tr>
+<tr>
+<td colspan="2"><input type="submit" name="btmsubmit" value="submit"></td>
+</tr>
+</table>
+</form>
+</div>
+
+<div style="float:left">
+<form action="sreaddata" METHOD="post">
+    {% csrf_token %}
+<table align="center" border="2" class="table">
+<tr>
+    <td>Student_Name:</td>
+    <td>
+        <select name="txtname">
+            {% for i in dataa %}
+                <option>{{ i.Student_Name }}</option>
+                {% endfor %}
+        </select>
+    </td>
+</tr>
+<tr>
+    <td>Book_Name:</td>
+    <td><select name="txtbook">
+        {% for i in datab %}
+            <option>{{ i.Book_Name }}</option>
+            {% endfor %}
+
+    </select></td>
+</tr>
+<tr>
+    <td>Start_Date:</td>
+    <td><input type="date" name="txtstart"></td>
+</tr>
+<tr>
+    <td>End_Date:</td>
+    <td><input type="date" name="txtend"></td>
+</tr>
+<tr>
+<td colspan="2"><input type="submit" name="btmsubmit" value="Assign"></td>
+</tr>
+
+</table>
+</form>
+</div>
+
+{% endblock %}
+
+
+

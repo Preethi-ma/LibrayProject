@@ -1,0 +1,73 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<form METHOD="post">
+    {% csrf_token %}
+<table align="center">
+<tr>
+    <td>Student_Name:</td>
+        <td><input type="text" value="{{ data.Student_Name }}" name="txtname"></td>
+
+</tr>
+<tr>
+    <td>Book_Name:</td>
+    <td><select name="txtbook">
+        <option selected>{{ data.Book_Name }}</option>
+        {% for i in datab %}
+            <option>{{ i.Book_Name }}</option>
+            {% endfor %}
+
+    </select></td>
+</tr>
+<tr>
+    <td>Start_Date:</td>
+    <td><input type="date" name="txtstart"></td>
+    <td><input type="text" value="{{ data.Start_Date }}" disabled></td>
+</tr>
+<tr>
+    <td>End_Date:</td>
+    <td><input type="date" name="txtend"></td>
+    <td><input type="text" value="{{ data.End_Date }}" disabled></td>
+</tr>
+<tr>
+<td colspan="2"><input type="submit" name="btmsubmit" value="Assign"></td>
+</tr>
+</table>
+</form>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h3 align="center"> Add student Data </h3>-->
+
+<!--</body>-->
+<!--</html>-->

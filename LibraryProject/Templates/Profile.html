@@ -1,0 +1,14 @@
+{% extends 'navbar1.html' %}
+{% block content %}
+<form action="ureaddata" METHOD="post">
+    {% csrf_token %}
+
+<h2> This is a Student Profile </h2>
+<h3>{{ data.Student_Name }}</h3>
+<h3>{{ data.Student_Phno }}</h3>
+<h3>{{ data.Student_Semester }}</h3>
+<h3>{{ data.Student_Course_id }}</h3>
+<td><input type="submit" name="btmsubmit" value="Edit Profile"></td>
+
+</form>
+{% endblock %}
